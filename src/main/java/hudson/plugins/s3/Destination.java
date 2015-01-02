@@ -44,7 +44,7 @@ public class Destination implements Serializable {
 
   public static Destination newFromRun(Run run, String bucketName, String fileName)
   {
-    String projectName = run.getParent().getName();
+    String projectName = run.getParent().getFullName();
     int buildID = run.getNumber();
     return new Destination(bucketName, "jobs/" + projectName + "/" + buildID + "/" + fileName);
   }
