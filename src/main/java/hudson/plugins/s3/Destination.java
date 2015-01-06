@@ -56,7 +56,7 @@ public class Destination implements Serializable {
     
   public static Destination newFromBuild(AbstractBuild<?, ?> build, String bucketName, String fileName)
   {
-    String projectName = build.getParent().getName();
+    String projectName = build.getParent().getFullName();
     int buildID =build.getNumber();
     return new Destination(bucketName, "jobs/" + projectName + "/" + buildID + "/" + fileName);
   }
